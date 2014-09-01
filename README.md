@@ -18,11 +18,13 @@ Let's call that directory `$JFFS`.
 
 
 ### Download
-You can also SCP the files from your computer if you prefer, but the easist way to get the 
+Setting up curl/wget with SSL (HTTPS urls) is a bit of a pain, but if it's available the following is the easiest way to grab the project archive.
+As an alternative, you can download the zip on your computer and then SCP the files to the router.
 ```sh
 export JFFS=/jffs # Replace with the appropriate path
 cd $JFFS
-wget https://github.com/impressiver/ddwrt_conntrack/archive/master.zip
+curl -O --capath $JFFS/ssl/certs --cacert $JFFS/ssl/certs/cacert.pem -L https://github.com/impressiver/ddwrt_conntrack/arch
+ive/master.zip
 unzip ddwrt_conntrack.zip
 ```
 
