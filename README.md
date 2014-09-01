@@ -4,14 +4,17 @@ DD-WRT Conntrack
 
 Derived from [qos_conntrack](https://csdprojects.co.uk/ddwrt/), with a few bug fixes and updated to work with 3.x kernel builds.
 
+
 ## Issues
 
-[ ] QoS labeling isn't working yet. The QoS `mark` values are masked in later builds of DD-WRT, and I'm still figuring out how to calculate QoS priority from them.
+- [ ] QoS labeling isn't working yet. The QoS `mark` values are masked in later builds of DD-WRT, and I'm still figuring out how to calculate QoS priority from them.
+
 
 ## How to use
 
 From the terminal, SSH (or telnet) into your router and CD to a permanent storage directory (eg. jffs, usb).
 Let's call that directory `$JFFS`.
+
 
 ### Download
 You can also SCP the files from your computer if you prefer, but the easist way to get the 
@@ -35,18 +38,22 @@ $JFFS/ddwrt_conntrack/MyPage/traffic_monitor.sh 10&
 Now open a browser to the DD-WRT admin panel, and click 'Status', then 'MyPage'.
 At this point, the traffic monitor should display active network clients, connections and bandwidth.
 
-### Startup script
-In order for the traffic monitor to start automatically after reboot, you need to add the above as a startup script:
+
+### Startup script  
+In order for the traffic monitor to start automatically after reboot, you need to add the above as a startup script:  
+
 1. Open the DD-WRT admin panel in your browser
-1. Go to 'Commands' under 'Administration'
-1. Paste the *bootstrap* script into the 'Command Shell' input
-1. Click 'Save Startup'
+2. Go to 'Commands' under 'Administration'
+3. Paste the *bootstrap* script into the 'Command Shell' input
+4. Click 'Save Startup'  
+
 If saved successfully, the script will show up in the 'Startup' section of the 'Commands' page.
+
 
 ### Register MyPage
 This will permanently set ddwrt_conntrack to load as 'MyPage' (under 'Status' in the admin panel).
 Back in the terminal, run the following commands:
-```
+```sh
 nvram set mypage_scripts="$JFFS/ddwrt_conntrack/MyPage/ddwrt_conntrack.sh"
 nvram commit
 ```
