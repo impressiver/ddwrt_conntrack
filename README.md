@@ -22,7 +22,7 @@ You can also SCP the files from your computer if you prefer, but the easist way 
 ```sh
 export JFFS=/jffs # Replace with the appropriate path
 cd $JFFS
-wget http://github.com/impressiver/ddwrt_conntrack.zip
+wget https://github.com/impressiver/ddwrt_conntrack/archive/master.zip
 unzip ddwrt_conntrack.zip
 ```
 
