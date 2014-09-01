@@ -3,6 +3,7 @@ DD-WRT Conntrack
 # QoS IP Connection Tracking / Bandwidth Monitor
 
 Derived from [qos_conntrack](https://csdprojects.co.uk/ddwrt/), with a few bug fixes and updated to work with 3.x kernel builds.
+See this [DD-WRT thread](http://www.dd-wrt.com/phpBB2/viewtopic.php?t=84442) for details.
 
 
 ## Issues
