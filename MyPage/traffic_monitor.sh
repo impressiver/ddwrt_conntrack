@@ -7,7 +7,7 @@ fi
 
 # Bandwidth Download/Upload Rate Counter
 LAN_IFACE=$(nvram get lan_ifname)
-LAN_TYPE=$(nvram get lan_ipaddr | awk ' { FS="."; print $1"."$2 }')
+LAN_TYPE=$(nvram get lan_ipaddr | awk ' BEGIN { FS="." }; { print $1"."$2 }')
 
 if [ -f /tmp/traffic_monitor.lock ];
 then
